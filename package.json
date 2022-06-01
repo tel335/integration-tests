@@ -12,9 +12,11 @@
   "author": "Francisco Cabezas",
   "license": "ISC",
   "dependencies": {
+    "jest": "^28.1.0",
     "koa": "^2.13.4",
     "koa-body": "^4.2.0",
-    "koa-router": "^10.1.1"
+    "koa-router": "^10.1.1",
+    "supertest": "^6.2.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.6",
