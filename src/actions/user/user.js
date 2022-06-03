@@ -17,3 +17,7 @@ exports.removeUser = (userRol) => {
         return user.rol !== userRol
     })
 }
+
+exports.clearUsers = () => {
+    users = []
+}
