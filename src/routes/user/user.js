@@ -6,7 +6,13 @@ exports.getAllUsers = (ctx) => {
 }
 
 exports.createUser = (ctx) => {
-    userActions.addUser(ctx.request.body)
+    const body = ctx.request.body
+    if (!body || Object.keys(body).length === 0) {
+        ctx.status = 400
+        ctx.body = { message: 'User data is missing' }
+        return ctx
+    }
+    userActions.addUser(body)
     ctx.body = { message: 'User was created' }
     return ctx
 }

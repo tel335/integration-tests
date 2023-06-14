@@ -22,6 +22,12 @@ describe('PUT /api/users', () => {
         server.close()
     })
 
+    test('should respond with status 400 if user is null or undefined', async () => {
+        const response = await request(app.callback()).put('/api/user')
+        expect(response.status).toBe(400)
+        expect(response.body).toEqual({ message: 'User data is missing' })
+    })
+
     test('should respond with OK message when user was created', async () => {
         const response = await request(app.callback()).put('/api/user').send(getMockUser())
         expect(response.status).toBe(200)
